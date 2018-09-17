@@ -1,0 +1,19 @@
+---
+
+- name: UniFi Controller Facts Ansible Module Test
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: List online clients
+      unifi_controller_facts:
+        controller_baseURL: "https://192.168.1.224:8443"
+        controller_username: "admin"
+        controller_password: "changeme"
+        controller_site: "default"
+        query: list_online_clients
+      register: returnedData
+
+    - name: debug
+      debug:
+        msg: "{{ returnedData }}"
