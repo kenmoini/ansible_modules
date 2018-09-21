@@ -12,14 +12,17 @@ This module provides a simple, yet needed extension of the UniFi Controller API.
 3) Note the test.yml file for examples on how to use the module
 
 ## Example
-    - name: Get User List
-      unifi_controller_facts:
-        controller_baseURL: "https://127.0.0.1:8443"
-        controller_username: "admin"
-        controller_password: "changeme"
-        controller_site: "default"
-        query: list_users
-      register: returnedData
+
+```yaml
+- name: Get User List
+  unifi_controller_facts:
+    controller_baseURL: "https://127.0.0.1:8443"
+    controller_username: "admin"
+    controller_password: "changeme"
+    controller_site: "default"
+    query: list_users
+  register: returnedData
+```
 
 ## Available queries
 * **Clients**
